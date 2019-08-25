@@ -1,0 +1,5 @@
+sceneSetups:
+- path: Assets/LeapMotion/Modules/InteractionEngine/Examples/2. Basic UI/Basic UI.unity
+  isLoaded: 1
+  isActive: 1
+  isSubScene: 0
