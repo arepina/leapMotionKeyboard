@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\ButtonHandler.cs" />
     <Compile Include="Assets\Layouts\Keyboard.cs" />
     <Compile Include="Assets\LeapMotion\Core\Examples\Example Assets\InertiaPostProcessProvider.cs" />
     <Compile Include="Assets\LeapMotion\Core\Examples\Example Assets\ProjectionPostProcessProvider.cs" />
