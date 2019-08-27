@@ -1,34 +1,45 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using Leap.Unity.Interaction;
+using System;
 
 [RequireComponent(typeof(InteractionBehaviour))]
 public class ButtonHandler : MonoBehaviour
 {
-    private InteractionBehaviour _intObj;
+    private InteractionBehaviour _interactionBehaviour;
     private TextMesh _keyboard;
+    private static string _currentSymbol;
+    private static int _previousSymbolTimeS;
 
     void Start()
     {
-        _intObj = GetComponent<InteractionBehaviour>();
+        _interactionBehaviour = GetComponent<InteractionBehaviour>();
         _keyboard = GameObject.FindWithTag("keyboardText").GetComponent<TextMesh>();
-        //_intObj.OnPerControllerHoverBegin += OnPerControllerHoverBegin;
+        _currentSymbol = "";
+        _previousSymbolTimeS = DateTime.Now.Second;
     }
 
     void Update()
     {
-        if (_intObj.isPrimaryHovered) //_intObj.isHovered
+        if (_interactionBehaviour.isPrimaryHovered)
         {
-            _keyboard.text = _keyboard.text + this._intObj.name;
+            if (!_currentSymbol.Equals(this._interactionBehaviour.name)) // changed the letter
+            {
+                //TODO add a delay for click on the letter
+                Debug.Log("Different");
+                _currentSymbol = this._interactionBehaviour.name;
+                _keyboard.text = _keyboard.text + _currentSymbol;
+                _previousSymbolTimeS = DateTime.Now.Second;
+            }
+            else if(Math.Abs(DateTime.Now.Second - _previousSymbolTimeS) > 1) // same letter one more time, 1 second delay
+            {
+                Debug.Log("Same " + _currentSymbol + " " + Math.Abs(DateTime.Now.Second - _previousSymbolTimeS));
+                _keyboard.text = _keyboard.text + _currentSymbol;
+                _previousSymbolTimeS = DateTime.Now.Second;
+            }
+            else
+            {
+                Debug.Log("!Same " + _currentSymbol + " " + Math.Abs(DateTime.Now.Second - _previousSymbolTimeS));
+            }
         }
     }
-
-    //private void OnPerControllerHoverBegin(InteractionController obj)
-    //{
-    //    debug.log("pos=" + obj.position + " primaryhoveredobject=" + obj.primaryhoveredobject + " tag=" + obj.tag + " velocity=" + obj.velocity);
-    //    Pos=(0.1, 1.5, 0.3) primaryHoveredObject=i(Leap.Unity.Interaction.InteractionButton) tag=Untagged velocity = (-0.1, 0.0, 0.0)
-    //    Pos=(0.0, 1.5, 0.3) primaryHoveredObject=u(Leap.Unity.Interaction.InteractionButton) tag=Untagged velocity = (-0.1, -0.3, 0.3)
-    //    Pos=(0.1, 1.4, 0.3) primaryHoveredObject=j(Leap.Unity.Interaction.InteractionButton) tag=Untagged velocity = (-0.1, 0.0, 0.0)
-    //    Pos=(0.1, 1.4, 0.3) primaryHoveredObject=k(Leap.Unity.Interaction.InteractionButton) tag=Untagged velocity = (-0.1, -0.5, 0.7)
-    //}
 }

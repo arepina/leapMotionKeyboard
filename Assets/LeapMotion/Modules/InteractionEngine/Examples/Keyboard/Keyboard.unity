@@ -19762,7 +19762,12 @@ PrefabInstance:
     - target: {fileID: 102630856385811638, guid: d53bbce24b78fb742ba7b93ce8a36f86,
         type: 3}
       propertyPath: m_Text
-      value: Text from keyboard
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 102630856385811638, guid: d53bbce24b78fb742ba7b93ce8a36f86,
+        type: 3}
+      propertyPath: m_FontSize
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4918707043880540, guid: d53bbce24b78fb742ba7b93ce8a36f86, type: 3}
       propertyPath: m_LocalScale.x
