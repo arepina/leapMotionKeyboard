@@ -1,35 +1,34 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using Leap.Unity.Interaction;
-using System;
 
 [RequireComponent(typeof(InteractionBehaviour))]
 public class ButtonHandler : MonoBehaviour
 {
     private InteractionBehaviour _intObj;
+    private TextMesh _keyboard;
 
     void Start()
     {
-        Debug.Log("Start");
         _intObj = GetComponent<InteractionBehaviour>();
-        _intObj.OnHoverBegin += onHoverBegin;
-        _intObj.OnPerControllerHoverBegin += OnPerControllerHoverBegin;
+        _keyboard = GameObject.FindWithTag("keyboardText").GetComponent<TextMesh>();
+        //_intObj.OnPerControllerHoverBegin += OnPerControllerHoverBegin;
     }
 
-    private void OnPerControllerHoverBegin(InteractionController obj)
+    void Update()
     {
-        Debug.Log((InteractionController)obj.intHand);
+        if (_intObj.isPrimaryHovered) //_intObj.isHovered
+        {
+            _keyboard.text = _keyboard.text + this._intObj.name;
+        }
     }
 
-    private void onHoverBegin()
-    {
-        Debug.Log("onHoverBegin");
-    }
-
-    public void setText(string text)
-    {
-        Debug.Log("setText");
-        Text txt = transform.Find("Text").GetComponent<Text>();
-        txt.text = text;
-    }
+    //private void OnPerControllerHoverBegin(InteractionController obj)
+    //{
+    //    debug.log("pos=" + obj.position + " primaryhoveredobject=" + obj.primaryhoveredobject + " tag=" + obj.tag + " velocity=" + obj.velocity);
+    //    Pos=(0.1, 1.5, 0.3) primaryHoveredObject=i(Leap.Unity.Interaction.InteractionButton) tag=Untagged velocity = (-0.1, 0.0, 0.0)
+    //    Pos=(0.0, 1.5, 0.3) primaryHoveredObject=u(Leap.Unity.Interaction.InteractionButton) tag=Untagged velocity = (-0.1, -0.3, 0.3)
+    //    Pos=(0.1, 1.4, 0.3) primaryHoveredObject=j(Leap.Unity.Interaction.InteractionButton) tag=Untagged velocity = (-0.1, 0.0, 0.0)
+    //    Pos=(0.1, 1.4, 0.3) primaryHoveredObject=k(Leap.Unity.Interaction.InteractionButton) tag=Untagged velocity = (-0.1, -0.5, 0.7)
+    //}
 }
