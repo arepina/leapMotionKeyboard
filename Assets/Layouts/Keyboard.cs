@@ -1,18 +1,35 @@
-﻿/*namespace LeapMotionKeyboard.Layouts
-{
-    public class Keyboard : Layout
-    {
+﻿using System.Collections.Generic;
+using UnityEngine;
 
-        public Keyboard()
-        {
-            row1Keys = new string[] { "`", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=" };
-            row1Shift = new string[] { "~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+" };
-            row2Keys = new string[] { "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]" };
-            row2Shift = new string[] { "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "{", "}" };
-            row3Keys = new string[] { "a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'", "\\" };
-            row3Shift = new string[] { "A", "S", "D", "F", "G", "H", "J", "K", "L", ":", "\"", "|" };
-            row4Keys = new string[] { "\\", "z", "x", "c", "v", "b", "n", "m", ",", ".", "/" };
-            row4Shift = new string[] { "|", "Z", "X", "C", "V", "B", "N", "M", "<", ">", "?" };
-        }
+public class Keyboard : MonoBehaviour
+{
+    private Dictionary<string, string> _numbersButtons;
+    public Keyboard()
+    {
+        _numbersButtons = new Dictionary<string, string>();
+        _numbersButtons.Add("1", "!");
+        _numbersButtons.Add("2", "@");
+        _numbersButtons.Add("3", "#");
+        _numbersButtons.Add("4", "$");
+        _numbersButtons.Add("5", "%");
+        _numbersButtons.Add("6", "^");
+        _numbersButtons.Add("7", "&");
+        _numbersButtons.Add("8", "*");
+        _numbersButtons.Add("9", "(");
+        _numbersButtons.Add("0", ")");
+        _numbersButtons.Add("-", "_");
+        _numbersButtons.Add(",", "<");
+        _numbersButtons.Add(".", ">");
+        _numbersButtons.Add("?", "~");
+        _numbersButtons.Add("'", "\"");
+        _numbersButtons.Add(";", ":");
+        _numbersButtons.Add("[", "{");
+        _numbersButtons.Add("]", "}");
     }
-}*/
+
+    public Dictionary<string, string> getNumbersDict()
+    {
+        return _numbersButtons;
+    }
+}
+
