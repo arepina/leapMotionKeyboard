@@ -3,33 +3,48 @@ using UnityEngine;
 
 public class Keyboard : MonoBehaviour
 {
-    private Dictionary<string, string> _numbersButtons;
+    private Dictionary<string, string> _dictionary;
     public Keyboard()
     {
-        _numbersButtons = new Dictionary<string, string>();
-        _numbersButtons.Add("1", "!");
-        _numbersButtons.Add("2", "@");
-        _numbersButtons.Add("3", "#");
-        _numbersButtons.Add("4", "$");
-        _numbersButtons.Add("5", "%");
-        _numbersButtons.Add("6", "^");
-        _numbersButtons.Add("7", "&");
-        _numbersButtons.Add("8", "*");
-        _numbersButtons.Add("9", "(");
-        _numbersButtons.Add("0", ")");
-        _numbersButtons.Add("-", "_");
-        _numbersButtons.Add(",", "<");
-        _numbersButtons.Add(".", ">");
-        _numbersButtons.Add("?", "~");
-        _numbersButtons.Add("'", "\"");
-        _numbersButtons.Add(";", ":");
-        _numbersButtons.Add("[", "{");
-        _numbersButtons.Add("]", "}");
+        _dictionary = new Dictionary<string, string>();
+        _dictionary.Add("1", "!");
+        _dictionary.Add("2", "@");
+        _dictionary.Add("3", "#");
+        _dictionary.Add("4", "$");
+        _dictionary.Add("5", "%");
+        _dictionary.Add("6", "^");
+        _dictionary.Add("7", "&");
+        _dictionary.Add("8", "*");
+        _dictionary.Add("9", "(");
+        _dictionary.Add("0", ")");
+        _dictionary.Add("-", "_");
+        _dictionary.Add(",", "<");
+        _dictionary.Add(".", ">");
+        _dictionary.Add("?", "~");
+        _dictionary.Add("'", "`");
+        _dictionary.Add(";", ":");
+        _dictionary.Add("[", "{");
+        _dictionary.Add("]", "}");
+        _dictionary.Add("+", "€");
+        _dictionary.Add("=", "=");
+        _dictionary.Add("/", "\"");
+        _dictionary.Add("\\", "©");
+        _dictionary.Add("|", "±");
     }
 
     public Dictionary<string, string> getNumbersDict()
     {
-        return _numbersButtons;
+        return _dictionary;
+    }
+
+    public GameObject[] getKeyboardNumbers()
+    {
+        return GameObject.FindGameObjectsWithTag("keyboardNumbers");
+    }
+
+    public GameObject[] getKeyboardButtons()
+    {
+        return GameObject.FindGameObjectsWithTag("keyboardButtons");
     }
 }
 

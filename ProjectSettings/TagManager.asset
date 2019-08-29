@@ -7,6 +7,7 @@ TagManager:
   - keyboardText
   - keyboardButtons
   - keyboardNumbers
+  - number
   layers:
   - Default
   - TransparentFX
