@@ -524,6 +524,9 @@
     <Reference Include="InteractionEngineUtility">
       <HintPath>C:/Users/Anastasia/Downloads/leapMotionKeyboard-master/leapMotionKeyboard-master/Assets/LeapMotion/Modules/InteractionEngine/Plugins/InteractionEngineUtility.dll</HintPath>
     </Reference>
+    <Reference Include="Valve.Newtonsoft.Json">
+      <HintPath>C:/Users/Anastasia/Downloads/leapMotionKeyboard-master/leapMotionKeyboard-master/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Analytics.Editor">
       <HintPath>C:/Users/Anastasia/Downloads/leapMotionKeyboard-master/leapMotionKeyboard-master/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
@@ -878,6 +881,28 @@
     <Reference Include="System.Xml.Serialization">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.9f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="SteamVR_Actions.csproj">
+      <Project>{698C17F9-B537-3EA1-4AF4-94669A5FBBE6}</Project>
+      <Name>SteamVR_Actions</Name>
+    </ProjectReference>
+    <ProjectReference Include="SteamVR_Input_Editor.csproj">
+      <Project>{9CC48BE2-B259-FD60-5926-D2E33AF8DECF}</Project>
+      <Name>SteamVR_Input_Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="SteamVR_Editor.csproj">
+      <Project>{59DEBC81-28F0-AD74-AC3A-49EE96E23C52}</Project>
+      <Name>SteamVR_Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="SteamVR.csproj">
+      <Project>{8564019F-4C6B-4601-8D81-52D10724BA1E}</Project>
+      <Name>SteamVR</Name>
+    </ProjectReference>
+    <ProjectReference Include="SteamVR_Windows_EditorHelper.csproj">
+      <Project>{EF6C47A2-E95D-54E7-33A9-095C98829C81}</Project>
+      <Name>SteamVR_Windows_EditorHelper</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

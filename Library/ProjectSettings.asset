@@ -47,7 +47,7 @@ PlayerSettings:
   defaultScreenWidthWeb: 960
   defaultScreenHeightWeb: 600
   m_StereoRenderingPath: 0
-  m_ActiveColorSpace: 0
+  m_ActiveColorSpace: 1
   m_MTRendering: 1
   m_StackTraceTypes: 010000000100000001000000010000000100000001000000
   iosShowActivityIndicatorOnLoading: -1
@@ -80,7 +80,7 @@ PlayerSettings:
   bakeCollisionMeshes: 0
   forceSingleInstance: 0
   useFlipModelSwapchain: 1
-  resizableWindow: 0
+  resizableWindow: 1
   useMacAppStoreValidation: 0
   macAppStoreCategory: public.app-category.games
   gpuSkinning: 1
@@ -305,6 +305,10 @@ PlayerSettings:
     m_Enabled: 0
     m_Devices:
     - Oculus
+    - OpenVR
+  - m_BuildTarget: iPhone
+    m_Enabled: 1
+    m_Devices:
     - OpenVR
   m_BuildTargetEnableVuforiaSettings: []
   openGLRequireES31: 0
@@ -634,10 +638,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 02d8c190-9954-4596-b536-fb97441d76e3
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: LeapMotionKeyboard
+  organizationId: unity_lwqxsbu42i6fmg
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
